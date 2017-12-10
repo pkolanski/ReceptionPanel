@@ -1,0 +1,25 @@
+.login-screen{
+    max-width: 300px;
+    margin:auto;
+    margin-top: 10%;
+}
+
+.text-white{
+    color: #fff;
+}
+
+.background{
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.form-input{
+    margin-bottom:10px;
+}
+
+.form-logo{
+    max-width:120px;
+    margin-bottom: 10px;
+}

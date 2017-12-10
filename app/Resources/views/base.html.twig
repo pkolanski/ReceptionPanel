@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>{% block title %}Luxus Hotel{% endblock %}</title>
+
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+      <script src="https://use.fontawesome.com/de14436d52.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    {% block stylesheets %}
+        <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
+    {% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+
+  </head>
+
+  <body class="background" background="{{ asset('background.jpg') }}">
+  <!-- Navigation -->
+     <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <img src="{{ asset('logo.png') }}" class="navbar-brand">
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="/"><i class="glyphicon glyphicon-home"></i> Home</a></li>
+      <li><a href="#"><i class="glyphicon glyphicon-info-sign"></i> About us</a></li>
+      <li><a href="#"><i class="glyphicon glyphicon-envelope"></i> Contact</a></li>
+        {% if is_granted('ROLE_ADMIN') %}
+            <li><a href="#"><i class="fa fa-line-chart"></i> Statistics</a></li>
+        {% endif %}
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      {% if is_granted('ROLE_USER') %}
+          <li><a href="{{ path('fos_user_security_logout') }}"><i class="glyphicon glyphicon-log-out"></i> Log out</a></li>
+      {% else %}
+          <li><a href="{{ path('fos_user_registration_register') }}"><i class="glyphicon glyphicon-user"></i> Sign Up</a></li>
+          <li><a href="{{ path('fos_user_security_login') }}"><i class="glyphicon glyphicon-log-in"></i> Log in</a></li>
+      {% endif %}
+    </ul>
+  </div>
+</nav>
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                {% block body %}{% endblock %}
+            </div>
+        </div>
+    </div>
+
+    {% block javascripts %}{% endblock %}
+  </body>
+
+</html>
+
