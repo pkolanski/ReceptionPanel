@@ -1,8 +1,6 @@
 {% trans_default_domain 'FOSUserBundle' %}
 
-{% block stylesheets %}
-    <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
-{% endblock %}
+
 {% block body %}
 
     {% if error %}
@@ -10,7 +8,7 @@
     {% endif %}
 
     <div id="login-page">
-        <div class="text-center container login-screen">
+        <div class="text-center container login-screen animated zoomIn">
             <div class="col-sm-12 col-md-10 col-md-offset-1">
                 <img class="form-logo" src="{{ asset('logo.png') }}">
                 <form action="{{ path("fos_user_security_check") }}" method="post">

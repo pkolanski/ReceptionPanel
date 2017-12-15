@@ -1,12 +1,12 @@
 {% trans_default_domain 'FOSUserBundle' %}
 
 {% block stylesheets %}
-    <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/styles.css') }}">
 {% endblock %}
 
 {% block body %}
 
-<div class="text-center container login-screen text-nowrap">
+<div class="text-center container login-screen text-nowrap animated zoomIn">
     <div class="col-sm-12 col-md-10 col-md-offset-1">
     <img class="form-logo" src="{{ asset('logo.png') }}">
 {{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}
