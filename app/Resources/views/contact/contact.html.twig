@@ -1,19 +1,38 @@
 {% extends 'base.html.twig' %}
-
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('assets/css/contact.css') }}">
+{% endblock %}
 {% block body %}
-<div class="contact-box-container text-center">
+<div class="contact-box-container text-center animated fadeIn">
     <div class="row">
-            <div class="mail-box white-border-box"><i class="fa fa-envelope-o text-white contact-icon"></i></div>
-            <div class="address-box white-border-box"><i class="fa fa-home text-white contact-icon"></i></div>
+            <div class="mail-box white-border-box">
+                <i class="fa fa-envelope-o text-white contact-icon"></i>
+                <div class="contact-font text-white">reception@luxushotel.com</div>
+                <div class="contact-font text-white">management@luxushotel.com</div>
+            </div>
+            <div class="address-box white-border-box">
+                <i class="fa fa-home text-white contact-icon"></i>
+                <div class="contact-font text-white">
+                    <div>Kraków, 30-072</div>
+                    <div>Rostafińskiego 11</div>
+                </div>
+            </div>
     </div>
     <div class="row">
-        <div class="telephone-box white-border-box"><i class="fa fa-phone text-white contact-icon"></i></div>
-        <div class="social-media-box white-border-box text-center">
-            <h3 class="text-white" style="padding-left:10%;padding-right:10%">You can also ask any question on our social media!</h3>
-            <div class="social-media-row"><i class="facebook-icon fa fa-facebook text-white contact-icon"></i>
-            <i class="instagram-icon fa fa-instagram text-white contact-icon"></i>
-            <i class="snapchat-icon fa fa-snapchat text-white contact-icon"></i>
+        <div class="telephone-box white-border-box">
+            <i class="fa fa-phone text-white contact-icon"></i>
+            <div class="contact-font text-white">Reception</div>
+            <div class="contact-font text-white" style="padding-left:10%;padding-right:10%">+48 650 320 134</div>
+            <div class="contact-font text-white">+48 435 342 314</div>
         </div>
+        <div class="social-media-box white-border-box text-center">
+            <div class="contact-font text-white">You can also ask any question on our social media!</div>
+            <div class="social-media-row">
+                <a href="https://www.facebook.com/"><i class="facebook-icon fa fa-facebook text-white contact-icon"></i></a>
+                <a href="https://www.instagram.com/"><i class="instagram-icon fa fa-instagram text-white contact-icon"></i></a>
+                <a href="https://www.snapchat.com/"><i class="snapchat-icon fa fa-snapchat text-white contact-icon"></i></a>
+                <a href="https://www.twitter.com/"><i class="twitter-icon fa fa-twitter-square text-white contact-icon"></i></a>
+            </div>
     </div>
     </div>
 </div>

@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('assets/css/reservations.css') }}">
+{% endblock %}
+{% block body %}
+    <div class="jumbotron">
+        <div style="margin-bottom:80px">
+            <h2 class="pull-left">Reservations</h2>
+        <a href="{{ path('reservation-create') }}" class="btn btn-success pull-right" style="margin-top:20px">Add new reservation</a>
+        </div>
+        <div>
+        <table id="reservations-table" class="table table-bordered table-striped">
+            <thead>
+            <tr>
+                <th>No</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Reservation Date</th>
+                <th>From</th>
+                <th>To</th>
+                <th>Room Number</th>
+                <th>Action</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for reservation in reservations %}
+            <tr>
+                <td>{{ reservation.getId }}</td>
+                <td>{{ reservation.firstName }}</td>
+                <td>{{ reservation.lastName }}</td>
+                <td>{{ reservation.reservationDate|date('F j Y') }}</td>
+                <td>{{ reservation.fromDate|date('F j Y') }}</td>
+                <td>{{ reservation.toDate|date('F j Y') }}</td>
+                <td>{{ reservation.roomNo}}</td>
+                <td>
+                    <a href="{{ path('reservation-edit', {'id': reservation.id}) }}" class="btn btn-primary">Edit</a>
+                    <a href="{{ path('reservation-delete',{'id':reservation.id}) }}" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function() {
+            $('#reservations-table').DataTable({
+            });
+        } );
+    </script>
+{% endblock %}
