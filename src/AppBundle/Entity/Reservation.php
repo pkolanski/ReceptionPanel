@@ -63,6 +63,28 @@ class Reservation
      */
     private $reservationDate;
 
+    /**
+     * @return int
+     */
+    public function getUserId()
+    {
+        return $this->userId;
+    }
+
+    /**
+     * @param int $userId
+     */
+    public function setUserId($userId)
+    {
+        $this->userId = $userId;
+    }
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="User_Id", type="integer")
+     */
+    private $userId;
 
     /**
      * Get id
