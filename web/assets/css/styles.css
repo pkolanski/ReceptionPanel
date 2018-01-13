@@ -27,3 +27,13 @@
     max-width:120px;
     margin-bottom: 10px;
 }
+
+.white-box{
+    background-color:#dadada;
+    padding:25px;
+    border-radius:5px;
+}
+.white-box-container{
+    padding-top:15px !important;
+    padding-bottom:15px !important;
+}

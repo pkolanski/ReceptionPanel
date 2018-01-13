@@ -1,0 +1,103 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('assets/css/styles.css') }}">
+{% endblock %}
+
+{% block body %}
+
+    <div class="col-lg-12">
+        <div class="col-lg-3">
+        <div class="white-box-container">
+            <div class="white-box text-center text-nowrap animated zoomIn">
+                <i class="fa fa-user" style="font-size: 2vw"></i>
+                <p style="padding-bottom: 10px;font-size: 2vw">Information</p>
+                <p>{{ 'profile.show.username'|trans }}: {{ user.username }}</p>
+                <p>{{ 'profile.show.email'|trans }}: {{ user.email }}</p>
+            </div>
+        </div>
+            <div class="white-box-container">
+                <div class="col-lg-12 white-box text-center text-nowrap animated zoomIn">
+                <i class="fa fa-cog fa-spin" style="font-size: 2vw"></i><i class="fa fa-cog fa-spin" style="font-size: 1.3vw"></i>
+                    <p style="font-size: 2vw">Options</p>
+                    <div class="col-lg-12" style="padding:5px;">
+                        <a href="{{ path('fos_user_change_password') }}" class="btn btn-success btn-block">Change password</a>
+                    </div>
+                    <div class="col-lg-12" style="padding:5px;">
+                        <a href="{{ path('fos_user_profile_edit') }}" class="btn btn-primary btn-block">Edit profile</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <div class="col-lg-9 white-box-container">
+        <div class="col-lg-12 white-box text-center text-nowrap animated zoomIn">
+            <p style="font-size: 2vw">My reservations</p>
+            <table id="my-reservations-table" class="table table-bordered table-striped">
+                <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Reservation Date</th>
+                    <th>From</th>
+                    <th>To</th>
+                    <th>Room Number</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>2018-01-01</td>
+                    <td>2018-01-02</td>
+                    <td>2018-01-12</td>
+                    <td>22</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>2018-02-11</td>
+                    <td>2018-02-12</td>
+                    <td>2018-02-14</td>
+                    <td>11</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>2018-03-01</td>
+                    <td>2018-03-21</td>
+                    <td>2018-03-29</td>
+                    <td>32</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>2018-04-01</td>
+                    <td>2018-04-02</td>
+                    <td>2018-04-12</td>
+                    <td>221</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>2018-05-11</td>
+                    <td>2018-05-12</td>
+                    <td>2018-05-14</td>
+                    <td>121</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>2018-06-01</td>
+                    <td>2018-06-21</td>
+                    <td>2018-06-29</td>
+                    <td>332</td>
+                </tr>
+                </tbody>
+            </table>
+            </div>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function(){
+            $('#my-reservations-table').DataTable({
+                "info":false,
+                "filter":false,
+                "paging":false,
+                "length":false
+            });
+        })
+    </script>
+{% endblock %}
