@@ -1,0 +1,82 @@
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('assets/css/about.css') }}">
+{% endblock %}
+    {% block body %}
+    <script>
+        $(document).ready(function () {
+            var modal = document.getElementById('myModal');
+
+            // Get the image and insert it inside the modal - use its "alt" text as a caption
+            var img1 = document.getElementById("img1");
+            var img2 = document.getElementById("img2");
+            var img3 = document.getElementById("img3");
+            var modalImg = document.getElementById("img-modal");
+            var captionText = document.getElementById("caption");
+            img1.onclick = function () {
+                modal.style.display = "block";
+                modalImg.src = this.src;
+                captionText.innerHTML = this.alt;
+            };
+            img2.onclick = function () {
+                modal.style.display = "block";
+                modalImg.src = this.src;
+                captionText.innerHTML = this.alt;
+            };
+            img3.onclick = function () {
+                modal.style.display = "block";
+                modalImg.src = this.src;
+                captionText.innerHTML = this.alt;
+            };
+            // Get the <span> element that closes the modal
+            var span = document.getElementsByClassName("close")[0];
+
+            // When the user clicks on <span> (x), close the modal
+            span.onclick = function () {
+                modal.style.display = "none";
+            }
+        })
+    </script>
+    <h2 class="page-header"><span class="text-white">About us</span></h2>
+    <div id="lipsum" class="text-white" style="opacity: 0.7;">
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ut finibus nunc. Nunc sapien erat, venenatis eu dapibus sit amet, consectetur tempus ante. Nulla cursus, odio nec fringilla posuere, felis ligula dignissim nisi, a malesuada lorem libero id nibh. Cras egestas enim in massa varius gravida. Nam non ligula dolor. Vivamus vitae dignissim ante. Phasellus tristique dolor at sem dignissim sollicitudin. Pellentesque placerat lectus sit amet scelerisque blandit. Suspendisse mi sapien, euismod cursus condimentum non, commodo ut diam. Donec pharetra nisi sagittis sem cursus placerat. Sed faucibus, quam vitae aliquet tincidunt, est risus vehicula dolor, in iaculis odio est a sem.
+        </p>
+        <p>
+            Mauris elementum elit ac quam vestibulum, ac rutrum lorem pellentesque. Ut sed elementum sapien. Ut sed tincidunt augue. Donec quis dignissim diam, at vulputate nunc. Phasellus libero arcu, ullamcorper quis vestibulum quis, consequat blandit massa. Donec convallis molestie sem luctus aliquam. Nullam rutrum hendrerit mauris eu euismod.
+        </p>
+        <p>
+            Praesent consequat ullamcorper est at cursus. Nunc fermentum pellentesque faucibus. Vivamus lobortis auctor metus et imperdiet. Nulla convallis et nibh et aliquet. Maecenas ultricies, arcu sed dignissim fermentum, magna libero fermentum velit, eu placerat nunc massa eu velit. In ut nunc nibh. Phasellus fringilla, neque eget sagittis pulvinar, sem nulla hendrerit nunc, pretium pulvinar libero urna nec lacus. Fusce bibendum magna non tellus vulputate aliquet ut sit amet nunc. Praesent et faucibus nibh. Suspendisse non mauris viverra, dapibus leo vitae, auctor neque. Fusce vel vulputate lorem, quis dictum odio. Proin feugiat dui leo. Fusce congue nunc eget blandit vestibulum.
+        </p>
+        <div class="col-lg-12">
+            <img id="img1" class="img-container col-lg-4 col-md-6 col-sm-6 col-xs-12" alt="Rooms" src="{{ asset('assets/images/hotel-1.jpg') }}"height="auto;">
+            <img id="img2" class="img-container col-lg-4 col-md-6 col-sm-6 col-xs-12" alt="Big pool" src="{{ asset('assets/images/hotel-2.jpg') }}"height="auto">
+            <img id="img3" class="img-container col-lg-4 col-md-6 col-sm-6 col-xs-12" alt="Small pool" src="{{ asset('assets/images/hotel-3.jpg') }}"height="auto">
+        </div>
+        <div id="myModal" class="modal">
+
+            <!-- The Close Button -->
+            <span class="close">&times;</span>
+
+            <!-- Modal Content (The Image) -->
+            <img class="modal-content" id="img-modal">
+
+            <!-- Modal Caption (Image Text) -->
+            <div id="caption"></div>
+        </div>
+        <p>
+            Duis nec eleifend diam. Nullam aliquet massa eget libero molestie posuere. Nunc turpis est, lobortis a tellus id, ornare convallis neque. Vivamus ac risus maximus, bibendum arcu a, pellentesque velit. Aenean convallis magna a dictum rhoncus. Donec lobortis massa sit amet pharetra pulvinar. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam tempor porttitor sem sed accumsan. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sit amet ipsum sollicitudin, consequat ex id, laoreet dolor.
+        </p>
+        <p>
+            Donec vitae lacus tellus. Nam a efficitur diam. Praesent a neque ornare, volutpat ante id, lacinia ipsum. Integer condimentum lectus vitae odio malesuada porta. Ut justo odio, euismod a velit vel, tincidunt faucibus dolor. Proin non luctus libero, id tincidunt orci. Sed vulputate rhoncus aliquam. Donec ornare ipsum risus, quis varius sem semper sit amet. Fusce vitae mattis magna. Ut varius pharetra justo non tristique. Nam quis ornare elit. Maecenas a leo mi. Ut tempus convallis erat id fringilla. Cras condimentum, ante vel dignissim hendrerit, nibh ipsum ullamcorper nibh, eget consequat massa ex ut lorem. Donec massa orci, dignissim id fringilla quis, dignissim sed eros. Suspendisse tincidunt lectus molestie, faucibus nisl sed, feugiat nunc.
+        </p>
+        <p>
+            Aenean vehicula massa arcu, a scelerisque purus tristique quis. Aliquam rhoncus vitae nibh sit amet ullamcorper. Integer arcu dui, tristique id semper id, tempus sed enim. Maecenas eget porta purus, ut accumsan velit. Suspendisse nunc orci, mollis vitae magna et, ornare elementum mauris. Nullam aliquet cursus mi, in mattis odio lobortis a. Nulla condimentum non risus sed tincidunt. Integer placerat mauris non massa pulvinar, vel dapibus nibh tristique. Phasellus ligula magna, scelerisque vel velit sed, ultricies placerat sem. Duis in sem turpis. Vivamus aliquam posuere neque, id commodo ante cursus viverra. Ut non tortor urna. Ut consequat dolor nisi, in vestibulum mi elementum eu. Proin tincidunt dolor nec metus ullamcorper, quis sagittis turpis suscipit.
+        </p>
+        <p>
+            Suspendisse potenti. Aliquam fermentum diam eu tellus auctor posuere. Nulla facilisi. Morbi consequat orci sed sem vestibulum, quis tincidunt dui vehicula. Vivamus non euismod augue. Vivamus rutrum dictum quam, a ultricies est vulputate vitae. In dictum luctus turpis, sed dapibus tellus facilisis at. Nulla bibendum est neque, eu condimentum ex suscipit eget. Aenean viverra, velit in suscipit placerat, libero erat ultrices nunc, vitae volutpat purus justo eget neque. Aenean dignissim, massa vel feugiat mollis, neque dui scelerisque sem, et congue orci quam id purus. Donec eget mollis odio, sit amet cursus augue. Suspendisse eu sollicitudin urna. Donec vel lacus eros. Vivamus mi dolor, consequat ultricies metus nec, viverra pellentesque enim.
+        </p>
+        <p>
+            Mauris non egestas felis. Vestibulum mollis sem sed felis eleifend ultricies. Integer vel enim non magna cursus suscipit tincidunt et augue. Donec nec vehicula libero. Quisque consequat turpis quis ligula luctus, sit amet dignissim dui blandit. Vestibulum turpis diam, dictum gravida leo ut, aliquet ornare neque. Nullam commodo libero et vestibulum porta. Vestibulum tincidunt orci maximus est maximus, in tempor nulla aliquet. Phasellus nunc est, tincidunt nec massa quis, accumsan ornare ante. Sed est sem, congue in pellentesque ut, sollicitudin nec quam. Donec sit amet nibh aliquet, vehicula neque a, gravida ante. In venenatis pulvinar mauris, sit amet finibus sem facilisis vitae.
+        </p></div>
+{% endblock %}
