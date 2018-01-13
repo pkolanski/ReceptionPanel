@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('assets/css/styles.css') }}">
+{% endblock %}
+    {% block body %}
+        <div class="white-box col-lg-12" style="margin-bottom:20px;">
+        <div class="col-lg-3">
+        <canvas id="myChart1" width="400" height="400"></canvas>
+        </div>
+        <div class="col-lg-3">
+            <canvas id="myChart2" width="400" height="400"></canvas>
+        </div>
+        <div class="col-lg-3">
+            <canvas id="myChart3" width="400" height="400"></canvas>
+        </div>
+        <div class="col-lg-3">
+            <canvas id="myChart4" width="400" height="400"></canvas>
+        </div>
+        </div>
+        <div class="white-box col-lg-12">
+        <div class="col-lg-3">
+            <canvas id="myChart5" width="400" height="400"></canvas>
+        </div>
+        <div class="col-lg-3">
+            <canvas id="myChart6" width="400" height="400"></canvas>
+        </div>
+        </div>
+        <script src="{{ asset('assets/scripts/statistics.js') }}"></script>
+    {% endblock %}
